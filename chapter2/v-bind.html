@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue 示例 v-bind基本用法</title>
+    </head>
+    <body>
+        <div id="app">
+            <a v-bind:href="url">链接</a>
+            <img v-bind:src="imgUrl"  height="200" width="300"> 
+        </div>
+       
+    </body>
+    <script src="../js/vue-dev.js"></script>
+    <script> 
+        var app=new Vue({
+            el:'#app',
+            data:{
+                url:'https://www.github.com',
+                imgUrl:'http://img.desktx.com:8089/d/file/wallpaper/meishi/20170711/a4342d8eec03e0fa463f00b4f1bbfa39.jpg', 
+            } 
+            
+        })
+
+    </script>
+</html>

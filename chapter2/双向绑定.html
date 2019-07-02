@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue 示例</title>
+    </head>
+    <body>
+        <div id="app">
+          
+        </div>
+       
+    </body>
+    <script src="../js/vue-dev.js"></script>
+    <script>
+        var myData={a:1};
+        var app=new Vue({
+            el:'#app',
+            data: myData
+        })
+        console.log(app.a);//1
+        myData.a=2;
+        console.log(app.a);//2
+        app.a=3;
+        console.log(app.a);//3
+
+    </script>
+</html>

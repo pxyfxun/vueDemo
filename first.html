@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue 示例</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul> 
+                <li v-for="book in books">{{book.name}}</li>
+            </ul>
+        </div>
+       
+    </body>
+    <script src="js/vue-dev.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            // data:{
+            //     books:[
+            //         {name:'《vue.js实战》'},
+            //         {name:'《Java》'},
+            //         {name:'《.Net Core》'}
+            //     ]
+            // },
+        //    data() {//data定义为函数形式，还是直接定义为对象形式，皆可
+        //        return {
+        //             books:[
+        //                 {name:'《vue.js实战》'},
+        //                 {name:'《Java》'},
+        //                 {name:'《.Net Core》'}
+        //             ]
+        //        }
+        //    },
+            data:function(){//data定义为函数形式,上面和这样皆可
+                return {
+                    books:[
+                        {name:'《vue.js实战》'},
+                        {name:'《Java》'},
+                        {name:'《.Net Core》'}
+                    ]
+               }
+            }
+        })
+    </script>
+</html>

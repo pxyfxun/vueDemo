@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue 示例</title>
+    </head>
+    <body>
+        <div id="app" v-html="a_link_content">
+            <!-- <span v-html="a_link_content"></span> -->
+        </div>
+
+        <div id="jsdemo">
+            {{number/10}}
+            {{isOK?'成功':'失败'}}
+            {{text.split('').reverse().join('')}}
+        </div>
+       
+    </body>
+    <script src="../js/vue-dev.js"></script>
+    <script>
+      
+        var app=new Vue({
+            el:'#app',
+            data: {
+                a_link_content:'<a href="#">这是一个链接</a>'
+            } 
+        });
+
+        var jsVm=new Vue({
+            el:'#jsdemo',
+            data:{
+                number:100,
+                isOK:true,
+                text:'hello world'
+            }
+        })
+  
+
+    </script>
+</html>

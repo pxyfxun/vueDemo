@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>5.5 购物车示例</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!-- v-cloak 作用：
+            当网速较慢、Vue.js文件还没加载完时，再页面上会显示{{message}}的字样，直到Vue创建实例，编译模板时，
+            DOM才会被替换，所以这个过程屏幕是有闪动的，。只要加一句CSS就可以解决这个问题了：
+            [v-cloak]{
+                display: none
+            }
+        
+            ps: v-cloak对于简单的项目很实用，但是在用工程化的项目里，比如webpack和vue-router时，项目的HTML只有一个空的div元素，
+                剩余的内容都是由路由去挂载不同组件完成的，所以不再需要v-cloak。
+        -->
+        <div id="app" v-cloak>
+            <template v-if="list.length"> 
+                <table>
+                    <thead>
+                        <th></th>
+                        <th>商品名称</th>
+                        <th>商品单价</th>
+                        <th>购买数量</th>
+                        <th>操作</th>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item,index) in list">
+                            <td>{{ index + 1 }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.count }}</td>
+                            <td> 
+                                <button @click="handleReduce(index)" :disabled="item.count ===1">-</button>
+                                <button @click="handleAdd(index)">+</button> 
+                            </td>
+                            <td>
+                                <button @click="handleRemove(index)">移除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>总价：￥ {{ totalPrice }}</div>
+            </template>
+            <div v-else>购物车为空</div>
+        </div>
+       
+    </body>
+    <script src="../../js/vue-dev.js"></script>
+    <script src="index.js"></script>
+ 
+</html>

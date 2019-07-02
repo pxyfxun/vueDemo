@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue 示例 v-bind 和v-on 语法让</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-bind 替换成冒号 : -->
+            <a :href="url">链接</a>
+            <img :src="imgUrl"  height="100" width="150"> 
+            
+            <p v-if="show">这是一段文字</p>
+            <!-- v-on 替换成@ -->
+            <button @click="handleClose">单击隐藏</button>
+        </div>
+       
+    </body>
+    <script src="../js/vue-dev.js"></script>
+    <script> 
+        var app=new Vue({
+            el:'#app',
+            data:{
+                url:'https://www.github.com',
+                imgUrl:'http://img.desktx.com:8089/d/file/wallpaper/meishi/20170711/a4342d8eec03e0fa463f00b4f1bbfa39.jpg', 
+                show:true
+            },
+            methods: {
+                handleClose:function(){
+                    this.show=false
+                }
+            },
+        }) 
+    </script>
+</html>

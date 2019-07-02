@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>v-model 单选按钮</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="radio"  v-model="picked" value="html" id="html">
+            <label for="html">HTML</label>
+
+            <input type="radio"  v-model="picked" value="js" id="js">
+            <label for="js">JavaScript</label>
+
+            <input type="radio"  v-model="picked" value="css" id="csss">
+            <label for="css">CSS</label>
+
+            <br>
+            <p>选择的是 {{ picked }}</p>
+        </div>
+ 
+       
+    </body>
+    <script src="../js/vue-dev.js"></script>
+    <script>
+      var app=  new Vue({
+            el:'#app',
+            data:{
+                picked:'js'
+            } 
+        })
+    </script>
+</html>
